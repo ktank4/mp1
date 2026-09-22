@@ -1,18 +1,24 @@
 const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
+
   devtool: "source-map",
+
   devServer: {
-    static: { directory: path.resolve(__dirname, 'build') },
-    open: true,
+    static: {
+      directory: path.resolve(__dirname, "build"),
+    },
+    open: false,
     host: "localhost",
-    watchFiles: 'index.html',
+    watchFiles: "index.html",
   },
-  context: path.join(__dirname, 'src'),
+
+  context: path.join(__dirname, "src"),
+
   entry: "./index.js",
+
   module: {
     rules: [
       {
@@ -21,7 +27,12 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -33,19 +44,18 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
-    new CopyPlugin({
-      patterns: [
-        { from: './assets/', to: './assets/' },
-      ],
-    }),
+
+
     new HtmlWebpackPlugin({
       template: "index.html",
-      inject: 'body',
+      inject: "body",
     }),
   ],
+
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.js",
     path: path.resolve(__dirname, "build"),
   },
 };

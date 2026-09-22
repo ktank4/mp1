@@ -1,13 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <title>MP1</title>
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <nav id='nav'>
+            <a class="navSection homelink" data-section="home" href="#home">Home</a>
+            <a class="navSection aboutlink" data-section="about" href="#about">About Me</a>
+            <a class="navSection projectslink" data-section="projects" href="#projects">Projects</a>
+            <a class="navSection photoslink" data-section="photos" href="#photos">Photos</a>
+            <a class="navSection contactlink" data-section="contact" href="#contact">Contact</a>
+        </nav>
+        <div class="chicago" id="home">
+            <section class="home">
+                <h1>Kinjal Tank</h1>
+                <p>Computer Science Senior</p>
+            </section>
+        </div>
+        <section id="about" class="aboutme">
+            <h1>About Me</h1>
+            <div class="aboutparagraph">
+                <p>
+                    I'm a Computer Science student at the University of Illinois at 
+                    Urbana-Champaign, graduating Spring 2027. I work as a Junior Developer at Skars Technology, building features
+                    in C# on an Agile team.
+                    Outside of that, I'm VP, Fundraising, and Stroll Chair of my sorority 
+                    chapter. I like projects where I can combine solid engineering with 
+                    clear communication.
+                </p>
+            </div>
+        </section>
+        <section id="projects" class="projects">
+            <h1>Projects</h1>
+            <div class='project-grid'>
+                <div class="project-col modal" id="email">
+                    <img src="./assets/email.webp">
+                </div>
+                <div class="project-col modal" id="map">
+                    <img src="./assets/map.jpeg">
+                </div>
+                <div class="project-col modal" id="cc">
+                    <img src="./assets/cc.png">
+                </div>
+            </div>
+        </section>
+        <div class="popup" data-popup="email">
+            <button class="x"><i class="fa-solid fa-x"></i></button>
+            <img src="./assets/email.webp">
+            <h2>Email Project</h2>
+            <p>TMyWindowsService is a C# Windows background service that continuously monitors a website's availability and status. Built on the .NET Worker Service template, it runs silently in the background, checking the site at regular intervals and integrating with the Windows Service Control Manager for reliable start, stop, and shutdown handling. It also monitors the health of its corresponding database, and if the site goes down or the database becomes unavailable, it automatically sends an email alert to the manager.</p>
+        </div>
+        <div class="popup" data-popup="map">
+            <button class="x"><i class="fa-solid fa-x"></i></button>
+            <img src="./assets/map.jpeg">
+            <h2>Office Mapper</h2>
+            <p>A SQL Server–backed tool built to solve a practical business problem: finding employees near a given office location. The system stores structured data on people, offices, and skills, then uses a haversine-distance query to return all employees within a specified radius of any office. Useful for staffing, regional coverage, or logistics planning. Built using C# and SQL (SSMS).</p>
+        </div>
+        <div class="popup" data-popup="cc">
+            <button class="x"><i class="fa-solid fa-x"></i></button>
+            <img src="./assets/cc.png">
+            <h2>Colossal Caves</h2>
+            <p>Colossal Caves is a C#, object-oriented reimplementation of the classic Colossal Cave Adventure text game. It uses a reflection-based architecture that auto-discovers game objects (items, commands, locations, connections) into singleton dictionaries, so everything in the world is a single instance rather than freely instantiated objects. It's actively developed, with systems like combat/enemies, player death, a plant-growth puzzle, a debug/god-mode toolset, and polished console output already in place.</p>
+        </div>
+
+        <section id="photos" class="photos">
+            <h1>Photos</h1>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <ul class="carousel-track">
+                        <li class="slide currentSlide">
+                            <img src="./assets/IMG_0386.JPG" alt="Me" width="460" height="345">
+                        </li>
+                        <li class="slide">
+                            <img src="./assets/B044685D-F478-4070-B137-F89DFD6A3D61_1_105_c.jpeg" alt="Me" width="460" height="345">
+                        </li>
+                        <li class="slide">
+                            <img src="./assets/075D898C-609B-486D-8A6C-16C72F710F68_1_105_c.jpeg" alt="Me" width="460" height="345">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button carousel-button-left">&#8592;</button>
+                <button class="carousel-button carousel-button-right">&#8594;</button>
+            </div>
+        </section>
+        <div class="video-hero">
+            <video autoplay muted loop playsinline class="video-bg">
+                <source src="./assets/11959925_compressed.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <section id="contact" class="contact">
+                <h1>Contact</h1>
+                <div class='contact-grid'>
+                    <div class="contact-col">
+                        <a href="mailto:ktank4@illinois.edu">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <h4>Education: ktank4@illinois.edu</h4>
+                        <h4>Work: kinjal.tank4@outlook.com</h4>
+                    </div>
+                    <div class="contact-col">
+                        <a href="https://www.linkedin.com/in/kinjal-tank-b2a252286/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i> 
+                        </a>
+                        <h4>Kinjal Tank</h4>
+                    </div>
+                    <div class="contact-col">
+                        <a href="https://github.com/ktank4" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <h4>GitHub: ktank4</h4>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2026 Kinjal Tank</p>
+        </footer>
     </body>
 </html>

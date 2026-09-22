@@ -11,3 +11,16 @@ import './css/main.scss';
 
 // Scripts
 import './js/main.js';
+import './js/carousel.js';
+import './js/nav.js';
+import './js/modal.js';
+
+const targetDiv = document.getElementById('nav');
+
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+        targetDiv.classList.add('shrink');
+    } else {
+        targetDiv.classList.remove('shrink');
+    }
+});
